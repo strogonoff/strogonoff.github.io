@@ -1,6 +1,6 @@
 use Rack::Static, 
   :urls => ["/static"],
-  :root => "public/web"
+  :root => "public"
 
 run lambda { |env|
   [
