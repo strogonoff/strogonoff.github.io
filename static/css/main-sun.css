@@ -4,11 +4,11 @@ body{margin:0;font-size:13px;line-height:1.231}
 body,button,input,select,textarea{color:#fafafa;}
 ::-moz-selection{background:#333;color:#fefefe;text-shadow:none}
 ::selection{background:#fefefe;color:#8da983;text-shadow:none}
-a{color:#fafafa;transition:text-shadow .5s linear;}
+a{color:#fafafa;transition:text-shadow .1s linear;text-decoration:none;border-bottom:1px dotted whitesmoke;}
 a:visited{color: #f6f6f6;}
 a:hover{color: #fff;}
 a:focus{outline:thin dotted}
-a:hover,a:active{outline:0;text-shadow:#eaeaea 0 0 28px;}
+a:hover,a:active{outline:0;text-shadow:rgba(255,255,255,0.9) 0 0 35px;}
 
 @media print{*{background:transparent !important;color:#000 !important;text-shadow:none !important;filter:none !important;-ms-filter:none !important}
 a,a:visited{text-decoration:underline}
