@@ -23,7 +23,7 @@ img{max-width:100% !important}
 }
 
 html,body{background-color:#8da983;background:linear-gradient(to bottom, #83a07d 0%,#8da983 50%,#8da983 100%);height:100%;}
-body{cursor:default;font-size:110%;line-height:1.1;margin:0 auto;width:50%;}
+body{cursor:default;font-size:110%;line-height:1.1;margin:0 auto;width:50%;min-width:205px;padding:0 2em 0 2em;}
 body{font-family:Helvetica,Arial,sans-serif;}
 p{margin:.5em 0;}
 #intro{font-size:140%;padding-top:3em;}
