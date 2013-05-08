@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -6,7 +7,12 @@
         <link rel="stylesheet" href="./static/css/main-sun.css" type="text/css">
         <title>Anton Strogonoff</title>
     </head>
-    <script>document.write('<style type="text/css">body header, body section{visibility: hidden}</style>');</script>
+
+    <script>
+        // Hide section using fancy fonts
+        document.write('<style> #links {visibility: hidden} </style>');
+    </script>
+
     <body>
         <section id="intro">
             <p id="hello">
@@ -15,8 +21,8 @@
             <p id="truefact" title="Among other things">
                 I&nbsp;design and&nbsp;develop for&nbsp;Web.
             </p>
-            <!-- I know things like Django and AngularJS. -->
         </section>
+
         <section id="links">
             <p>
                 <a href="mailto:anton@strogonoff.name" class="hl">Write me a message</a>
@@ -24,36 +30,43 @@
                 on&nbsp;<a href="http://linkedin.com/in/strogonoff" class="hl">LinkedIn</a>&nbsp;or&nbsp;<a class="hl" href="https://plus.google.com/108564542236590882918/about">Google&nbsp;Plus</a>.
             </p>
         </section>
-        <script>
-           (function () {
-                var showStuff = function() {
-                    document.getElementById('intro')
-                        .style.visibility = 'visible';
-                    document.getElementById('links')
-                        .style.visibility = 'visible';
-                };
-                WebFontConfig = {
-                    google: { families: [ 'PT+Serif:400,400italic:latin' ] },
-                    active: showStuff, inactive: showStuff
-                };
-                (function() {
-                    var wf = document.createElement('script');
-                    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-                    '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-                    wf.type = 'text/javascript'; wf.async = 'true';
-                    wf.onerror = showStuff;
-                    var s = document.getElementsByTagName('script')[0];
-                    s.parentNode.insertBefore(wf, s);
-                })();
 
-                var _gaq = [['_setAccount', 'UA-24538431-1'],
-                    ['_setDomainName', '.strogonoff.name'],
-                    ['_trackPageview']];
-                (function(d, t) {
-                    var g = d.createElement(t),
-                    s = d.getElementsByTagName(t)[0];
-                    g.async = g.src = '//www.google-analytics.com/ga.js';
-                    s.parentNode.insertBefore(g, s);
-                }(document, 'script'));
+        <script>
+
+           (function () {
+                // Fancy fonts
+
+                var showStuffWithFancyFonts = function () {
+                    document.getElementById('links').style.visibility = 'visible';
+                };
+
+                window.WebFontConfig = {
+                    google: { families: [ 'PT+Serif:400,400italic:latin' ] },
+                    active: showStuffWithFancyFonts,
+                    inactive: showStuffWithFancyFonts
+                };
+
+                var wf = document.createElement('script');
+                wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+                wf.type = 'text/javascript'; wf.async = 'true';
+                wf.onerror = showStuffWithFancyFonts;
+                document.body.appendChild(wf);
             })();
+
+            (function () {
+                // Analytics
+
+                window._gaq = [
+                    ['_setAccount', 'UA-24538431-1'],
+                    ['_setDomainName', '.strogonoff.name'],
+                    ['_trackPageview']
+                ];
+
+                var g = document.createElement('script');
+                g.src = '//www.google-analytics.com/ga.js';
+                g.async = 'true';
+                document.body.appendChild(g);
+            })();
+
         </script>
