@@ -5,9 +5,9 @@ body,button,input,select,textarea{color:#fafafa;}
 ::selection{background:#fefefe;color:#8da983;text-shadow:none}
 a{color:#fafafa;transition:text-shadow .1s linear;text-decoration:none;border-bottom:1px dotted whitesmoke;}
 a:visited{color: #f6f6f6;}
-a:hover{color: #fff;}
 a:focus{outline:thin dotted}
-a:hover,a:active{outline:0;text-shadow:rgba(255,255,255,0.9) 0 0 35px;}
+a:hover,a:active{outline:0;text-shadow:#374141 0 0 30px;}
+a.inverse:hover,a.inverse:active{outline:0;text-shadow:rgba(255,255,255,0.5) 0 0 20px;}
 
 @media print{*{background:transparent !important;color:#000 !important;text-shadow:none !important;filter:none !important;-ms-filter:none !important}
 a,a:visited{text-decoration:underline}
@@ -21,11 +21,13 @@ img{max-width:100% !important}
 @page{margin:.5cm}
 }
 
-html,body{background-color:#8da983;background:linear-gradient(to bottom, #83a07d 0%,#8da983 50%,#8da983 100%);height:100%;}
+html,body{background-color:#89a2a2;height:100%;}
 body{font-family:Helvetica,Arial,sans-serif;font-size:13px;line-height:1.231;}
-body{cursor:default;font-size:110%;line-height:1.1;margin:0 auto;width:50%;min-width:205px;padding:0 2em 0 2em;}
+body{cursor:default;font-size:110%;line-height:1.3;margin:0 auto;width:50%;min-width:205px;padding:0 2em 0 2em;}
 p{margin:.5em 0;}
 #intro{font-size:140%;padding-top:3em;}
+#contacts{font-size:80%;padding-top: 1em;color:#6d8182;}
+#contacts a, #contacts a:visited, #contacts a:link {color:#6d8182;border: none;}
 #links{color:#fafafa;line-height:1.4;font-style:italic;}
 #hello{letter-spacing:-0.05em;margin:.8em 0 0 0;font-weight:bold;}
 #hello .name{letter-spacing:0;}

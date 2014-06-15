@@ -8,26 +8,53 @@
         <title>Anton Strogonoff</title>
     </head>
 
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "Person",
+            "email": "mailto:anton@strogonoff.name",
+            "name": "Anton Strogonoff",
+            "url": "http://anton.strogonoff.name",
+            "contactPoint": [{
+                "@type": "ContactPoint",
+                "url": "skype:anton-strogonoff?call",
+                "telephone": "+1 (646) 480-0737",
+                "contactType": "Skype",
+                "availableLanguage": [{
+                    "@type": "Language",
+                    "name": "English"}, {
+                    "@type": "Language",
+                    "name": "Russian"}
+                }]
+            }]
+        }
+    </script>
+
     <script>
         // Hide section using fancy fonts
         document.write('<style> #links {visibility: hidden} </style>');
     </script>
 
-    <body>
+    <body itemscope itemprop="provider" itemtype="http://schema.org/Person">
         <section id="intro">
-            <p id="hello">
-                Hi, I’m&nbsp;<span class="name">Anton</span>.
-            </p>
             <p id="truefact" title="Among other things">
-                I&nbsp;design and&nbsp;develop for&nbsp;Web.
+                Asking&nbsp;questions, designing&nbsp;solutions, programming&nbsp;computers.
             </p>
         </section>
 
         <section id="links">
             <p>
-                <a href="mailto:anton@strogonoff.name" class="hl">Write me a message</a>
+                <a href="mailto:anton@strogonoff.name">Write me a message</a>,
                 or&nbsp;find&nbsp;more&nbsp;about&nbsp;me
                 on&nbsp;<a href="http://linkedin.com/in/strogonoff" class="hl">LinkedIn</a>&nbsp;or&nbsp;<a class="hl" href="https://plus.google.com/+AntonStrogonoff/about">Google&nbsp;Plus</a>.
+            </p>
+        </section>
+
+        <section id="contacts">
+            <p>
+                Anton
+                &emsp;
+                <span itemprop="telephone" class="tel">+1.646.480.0737</span>,&nbsp;<a href="skype:anton-strogonoff" class="url inverse">Skype</a>
             </p>
         </section>
 
