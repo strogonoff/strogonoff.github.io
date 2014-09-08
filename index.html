@@ -49,27 +49,6 @@
 
         <script>
 
-           (function () {
-                // Fancy fonts
-
-                var showStuffWithFancyFonts = function () {
-                    document.getElementById('links').style.visibility = 'visible';
-                };
-
-                window.WebFontConfig = {
-                    google: { families: [ 'PT+Serif:400,400italic:latin' ] },
-                    active: showStuffWithFancyFonts,
-                    inactive: showStuffWithFancyFonts
-                };
-
-                var wf = document.createElement('script');
-                wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-                '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-                wf.type = 'text/javascript'; wf.async = 'true';
-                wf.onerror = showStuffWithFancyFonts;
-                document.body.appendChild(wf);
-            })();
-
             (function () {
                 // Analytics
 
