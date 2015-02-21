@@ -83,19 +83,23 @@ section.overview .sub-block {
 	width: 200px;
 }
 
-@media (min-width: 768px) {
-	img.narrow-map { display: none; }
-	img.medium-map { display: inline; }
-	img.wide-map { display: none; }
-}
-@media (max-width: 767px) {
-	img.narrow-map { display: inline; }
-	img.medium-map { display: none; }
-	img.wide-map { display: none; }
+img.map--medium { display: none; }
+.locate--maps-hires2 { display: none; }
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .locate--maps-hires2 { display: block; }
+    .locate--maps-lores { display: none; }
 }
 
-img.locate--map {
-	display: block;
+@media (min-width: 768px) {
+	img.map--narrow { display: none; }
+	img.map--medium { display: block; }
+	img.map--wide { display: none; }
+}
+@media (max-width: 767px) {
+	img.map--narrow { display: block; }
+	img.map--medium { display: none; }
+	img.map--wide { display: none; }
 }
 
 @media (max-width: 400px) {
