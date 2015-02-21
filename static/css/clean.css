@@ -96,7 +96,7 @@ a, a:link, a:visited {
 
 @media (max-width: 400px) {
 	body {
-		padding-top: 4.4em;
+		padding-top: 3.8em;
 		padding-bottom: 3em;
 		width: 65%;
 		font-size: 170%;
