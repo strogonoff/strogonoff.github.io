@@ -96,13 +96,13 @@ a, a:link, a:visited {
 
 @media (max-width: 400px) {
 	body {
-		padding-top: 3.8em;
+		padding-top: 3.5em;
 		padding-bottom: 3em;
 		width: 65%;
 		font-size: 170%;
 	}
 	header.intro {
-		margin-bottom: 3em;
+		margin-bottom: 2.2em;
 	}
 	.intro--oneliner {
 		font-size: .9em;
