@@ -98,8 +98,18 @@ a, a:link, a:visited {
 	body {
 		padding-top: 5em;
 		padding-bottom: 3em;
+		font-size: 165%;
 	}
 	header.intro {
 		margin-bottom: 3em;
+	}
+	.intro--oneliner {
+		font-size: 1em;
+	}
+	.intro--name {
+		font-size: 1.8em;
+	}
+	.sub-block {
+		line-height: 1.5;
 	}
 }
