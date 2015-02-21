@@ -34,7 +34,7 @@ header.intro {
 }
 
 section.overview {
-	max-width: 380px;
+	max-width: 480px;
 }
 
 .sideways-header {
@@ -43,7 +43,7 @@ section.overview {
 
 .overview--multiliner {
 	font-size: 1em;
-	margin-bottom: 3em;
+	margin-bottom: 1em;
 }
 
 .sub-block--header {
@@ -75,21 +75,29 @@ a, a:link, a:visited {
 	padding: 0;
 }
 
+section.overview .sub-block {
+	vertical-align: text-top;
+	display: inline-block;
+}
+.overview--contact {
+	width: 200px;
+}
+.overview--locate {
+	width: 500px;
+}
 
 @media (min-width: 768px) {
 	img.narrow-map { display: none; }
-	img.medium-map { display: none; }
-	img.wide-map { display: inline; }
+	img.medium-map { display: inline; }
+	img.wide-map { display: none; }
 }
-@media (max-width: 563px) {
+@media (max-width: 767px) {
 	img.narrow-map { display: inline; }
 	img.medium-map { display: none; }
 	img.wide-map { display: none; }
 }
-@media (min-width: 564px) and (max-width: 767px) {
-	img.narrow-map { display: none; }
-	img.medium-map { display: inline; }
-	img.wide-map { display: none; }
+
+@media (min-width: 768px) {
 }
 
 @media (max-width: 400px) {
@@ -106,7 +114,7 @@ a, a:link, a:visited {
 		font-size: .9em;
 	}
 	.overview--multiliner {
-		margin-bottom: 2em;
+		margin-bottom: 1em;
 	}
 	.intro--name {
 		font-size: 1.6em;
