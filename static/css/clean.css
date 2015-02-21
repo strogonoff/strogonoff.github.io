@@ -88,6 +88,7 @@ img.map--medium { display: none; }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     .locate--maps-hires2 { display: block; }
+    .locate--maps-lores { display: none; }
 }
 
 @media (min-width: 768px) {
@@ -99,9 +100,6 @@ img.map--medium { display: none; }
 	img.map--narrow { display: block; }
 	img.map--medium { display: none; }
 	img.map--wide { display: none; }
-}
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .locate--maps-lores { display: none; }
 }
 
 @media (max-width: 400px) {
