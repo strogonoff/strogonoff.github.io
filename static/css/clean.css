@@ -97,7 +97,8 @@ section.overview .sub-block {
 	img.wide-map { display: none; }
 }
 
-@media (min-width: 768px) {
+img.locate--map {
+	display: block;
 }
 
 @media (max-width: 400px) {
