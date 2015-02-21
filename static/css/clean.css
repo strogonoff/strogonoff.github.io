@@ -77,21 +77,19 @@ a, a:link, a:visited {
 
 
 @media (min-width: 768px) {
-	img.narrow-map {
-		display: none;
-	}
-	img.wide-map {
-		display: inline;
-	}
+	img.narrow-map { display: none; }
+	img.medium-map { display: none; }
+	img.wide-map { display: inline; }
 }
-
-@media (max-width: 767px) {
-	img.narrow-map {
-		display: inline;
-	}
-	img.wide-map {
-		display: none;
-	}
+@media (max-width: 573px) {
+	img.narrow-map { display: inline; }
+	img.medium-map { display: none; }
+	img.wide-map { display: none; }
+}
+@media (min-width: 574px) and (max-width: 767px) {
+	img.narrow-map { display: none; }
+	img.medium-map { display: inline; }
+	img.wide-map { display: none; }
 }
 
 @media (max-width: 400px) {
