@@ -81,12 +81,12 @@ a, a:link, a:visited {
 	img.medium-map { display: none; }
 	img.wide-map { display: inline; }
 }
-@media (max-width: 573px) {
+@media (max-width: 563px) {
 	img.narrow-map { display: inline; }
 	img.medium-map { display: none; }
 	img.wide-map { display: none; }
 }
-@media (min-width: 574px) and (max-width: 767px) {
+@media (min-width: 564px) and (max-width: 767px) {
 	img.narrow-map { display: none; }
 	img.medium-map { display: inline; }
 	img.wide-map { display: none; }
