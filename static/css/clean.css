@@ -3,12 +3,12 @@
 }
 
 body {
-	font-family: Arial, Helvetica, sans-serif;
 	font-family: Verdana, Geneva, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 }
 body {
     cursor: default;
-    font-size: 150%;
+    font-size: 158%;
     line-height: 1.4;
 	margin: 0 auto;
     width: 50%;
@@ -18,15 +18,15 @@ body {
 
 header.intro {
 	margin-bottom: 5em;
-	white-space: nowrap;
 }
 
 .intro--name {
-	font-size: 2.2em;
+	font-size: 2.1em;
 	margin: 0;
 }
 
 .intro--oneliner {
+	white-space: nowrap;
 	position: relative;
 	font-family: Arial, Helvetica, sans-serif;
 	top: 0em;
@@ -42,8 +42,8 @@ section.overview {
 }
 
 .overview--multiliner {
-	font-size: 1em;
 	margin-bottom: 1em;
+	font-size: 1.2em;
 }
 
 .sub-block--header {
@@ -65,7 +65,6 @@ a, a:link, a:visited {
 .overview--contact a, .overview--contact a:link, .overview--contact a:visited {
 	color: black;
 }
-
 .overview ul li {
 	white-space: nowrap;
 }
@@ -82,6 +81,9 @@ section.overview .sub-block {
 .overview--contact {
 	width: 200px;
 }
+.overview--at {
+	white-space: nowrap;
+}
 
 img.map--medium { display: none; }
 .locate--maps-hires2 { display: none; }
@@ -95,6 +97,18 @@ img.map--medium { display: none; }
 	img.map--narrow { display: none; }
 	img.map--medium { display: block; }
 	img.map--wide { display: none; }
+
+	.overview--sub-blocks {
+		white-space: nowrap;
+	}
+	.overview--network {
+		height: 6.5em;
+		overflow: hidden;
+	}
+	.overview--network:active, .overview--network:focus {
+		height: auto;
+		overflow: auto;
+	}
 }
 @media (max-width: 767px) {
 	img.map--narrow { display: block; }
@@ -102,7 +116,7 @@ img.map--medium { display: none; }
 	img.map--wide { display: none; }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
 	body {
 		padding-top: 3.5em;
 		padding-bottom: 3em;
@@ -116,10 +130,13 @@ img.map--medium { display: none; }
 		font-size: .9em;
 	}
 	.overview--multiliner {
-		margin-bottom: 1em;
+		font-size: 1.05em;
+	}
+	.overview--at {
+		font-size: 0.9em;
 	}
 	.intro--name {
-		font-size: 1.6em;
+		font-size: 1.8em;
 	}
 	.sub-block {
 		line-height: 1.5;
