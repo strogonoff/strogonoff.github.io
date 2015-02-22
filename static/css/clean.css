@@ -1,13 +1,6 @@
-.intro--name {
-	font-family: Georgia, Utopia, Charter, serif;
-}
-
-body {
-	font-family: Verdana, Geneva, sans-serif;
-	font-family: Arial, Helvetica, sans-serif;
-}
 body {
     cursor: default;
+	font-family: Arial, Helvetica, sans-serif;
     font-size: 158%;
     line-height: 1.4;
 	margin: 0 auto;
@@ -23,6 +16,8 @@ header.intro {
 .intro--name {
 	font-size: 2.1em;
 	margin: 0;
+	font-family: Georgia, Utopia, Charter, serif;
+
 }
 
 .intro--oneliner {
@@ -35,10 +30,6 @@ header.intro {
 
 section.overview {
 	max-width: 480px;
-}
-
-.sideways-header {
-	display: none;
 }
 
 .overview--multiliner {
@@ -74,6 +65,10 @@ a, a:link, a:visited {
 	padding: 0;
 }
 
+.sideways-header {
+	display: none;
+}
+
 section.overview .sub-block {
 	vertical-align: text-top;
 	display: inline-block;
@@ -101,13 +96,28 @@ img.map--medium { display: none; }
 	.overview--sub-blocks {
 		white-space: nowrap;
 	}
-	.overview--network {
-		height: 6.5em;
+	.overview--network ul {
+		max-height: 2.5em;
 		overflow: hidden;
+		-webkit-transition: max-height .6s ease-in-out;
+		-moz-transition: max-height .6s ease-in-out;
+		transition: max-height .6s ease-in-out;
 	}
-	.overview--network:active, .overview--network:focus {
-		height: auto;
-		overflow: auto;
+	.overview--network::after {
+		content: "…";
+		position: absolute;
+		opacity: 1;
+		-webkit-transition: opacity .2s ease-in-out;
+		-moz-transition: opacity .s ease-in-out;
+		transition: opacity .2s ease-in-out;
+	}
+	.overview--network:active::after,
+	.overview--network:focus::after,
+	.overview--network:hover::after {
+		opacity: 0;
+	}
+	.overview--network:active ul, .overview--network:focus ul, .overview--network:hover ul {
+		max-height: 10em;
 	}
 }
 @media (max-width: 767px) {
@@ -126,6 +136,9 @@ img.map--medium { display: none; }
 	header.intro {
 		margin-bottom: 2.2em;
 	}
+	.intro--name {
+		font-size: 1.8em;
+	}
 	.intro--oneliner {
 		font-size: .9em;
 	}
@@ -134,9 +147,6 @@ img.map--medium { display: none; }
 	}
 	.overview--at {
 		font-size: 0.9em;
-	}
-	.intro--name {
-		font-size: 1.8em;
 	}
 	.sub-block {
 		line-height: 1.5;
