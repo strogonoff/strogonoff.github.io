@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "eslint-config-kyt"
+  ],
+
+  "env": {
+  },
+
+  "plugins": [
+  ],
+
+  "rules": {
+    "jsx-quotes": ["error", "prefer-double"]
+  },
+
+  "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+          "jsx": true
+      }
+  }
+}
