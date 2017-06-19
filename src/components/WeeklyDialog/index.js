@@ -2,12 +2,10 @@
 import React from 'react';
 import styles from './styles.scss';
 
-function Home({ children }) {
+function WeeklyDialog () {
   return (
-    <section>
-
-    </section>
+    <p>Weekly thing</p>
   );
 }
 
-export default Home;
+export default WeeklyDialog;

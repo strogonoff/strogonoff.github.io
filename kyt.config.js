@@ -1,3 +1,5 @@
+const path = require('path');
+
 
 module.exports = {
   reactHotLoader: true,
@@ -14,6 +16,12 @@ module.exports = {
         }
       }]
     });
+
+    baseConfig.sassLoader = baseConfig.sassLoader || {};
+    baseConfig.sassLoader = {
+      includePaths: [path.resolve(__dirname, 'node_modules')]
+    };
+
     return baseConfig;
   }
 

@@ -1,11 +1,2 @@
 
 @import '../../shared-styles/variables';
-
-.paragraph + .paragraph {
-  padding-top: $padding;
-}
-
-.bigParagraph {
-  font-size: 2em;
-  font-family: $grad-family;
-}

@@ -3,36 +3,32 @@
 
 import Helmet from 'react-helmet';
 
-const helmet = Helmet.renderStatic();
+export default vo => {
+  const helmet = Helmet.renderStatic();
 
-export default vo => `
+  return `
+    <!DOCTYPE html>
+    <html ${helmet.htmlAttributes.toString()}>
 
-<!DOCTYPE html>
-<html lang="en" ${helmet.htmlAttributes.toString()}>
+      <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Language" content="en" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <head>
-    <meta charset="utf-8">
+        ${helmet.title.toString()}
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta http-equiv="Content-Language" content="en" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+        ${vo.cssBundle ? '<link rel="stylesheet" type="text/css" href="' + vo.cssBundle + '">' : ''}
 
-    ${helmet.title.toString()}
+        ${helmet.link.toString()}
+        ${helmet.meta.toString()}
+      </head>
 
-    <link id="favicon" rel="shortcut icon"
-      href="/kyt-favicon.png" sizes="16x16 32x32" type="image/png" />
+      <body>
+        <div id="root"><div>${vo.root}</div></div>
+        <script src="${vo.jsBundle}"></script>
+      </body>
 
-    ${vo.cssBundle ? '<link rel="stylesheet" type="text/css" href="' + vo.cssBundle + '">' : ''}
-
-    ${helmet.link.toString()}
-    ${helmet.meta.toString()}
-  </head>
-
-  <body>
-    <div id="root"><div>${vo.root}</div></div>
-    <script src="${vo.jsBundle}"></script>
-  </body>
-
-</html>
-
-`;
+    </html>
+  `;
+};
