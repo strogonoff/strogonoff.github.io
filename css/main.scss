@@ -219,6 +219,11 @@ ul {
         border-bottom: 1px solid black;
         transition: margin .1s ease-in-out, padding .1s ease-in-out;
         background: transparent;
+
+        &::placeholder {
+          font-size: 90%;
+          letter-spacing: -.03em;
+        }
       }
       .talk {
         display: none;
