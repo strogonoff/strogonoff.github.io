@@ -1,0 +1,317 @@
+---
+---
+
+@import "hsluv";
+
+//$color: Lavender;
+$color: black;
+
+
+body {
+  font-family: Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+
+  > main {
+    position: relative;
+    box-shadow: 0 0 100px 20px rgba(white, 0.2);
+  }
+}
+
+h1 {
+  font-weight: normal;
+
+  .name {
+    font-weight: bold;
+  }
+  .surname {
+    font-weight: bold;
+  }
+}
+
+a {
+  &:link, &:visited, &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+.offers-container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-areas: "whole-thing";
+  grid-gap: 0;
+}
+
+@mixin offers-grid() {
+  display: grid;
+  grid-template-columns: 100%;
+
+  @media screen and (min-width: 900px) {
+    grid-template-columns: 33% 33% 33%;
+  }
+
+  grid-gap: 0;
+  grid-area: whole-thing;
+}
+@mixin offers-bg($val, $size) {
+  > .offer-bg {
+    @each $n in [1, 2, 3] {
+      &:nth-child(#{$n}) {
+        $hue: $n * 100 + 70;
+
+        transform:
+          scaleX(0.97)
+          translateY(#{random(20) - 6}px)
+          translateX(-10px)
+          rotate(#{random(6) - 3}deg)
+          skew(#{($val - 1) * 30}deg, 6deg);
+
+        background: linear-gradient(
+          165deg,
+          rgba(hsluv($hue, 30%, 99%), 1) 0%,
+          rgba(hsluv($hue, 40%, 89%), 1) 100%);
+
+        transition: transform .2s ease-in-out;
+      }
+    }
+  }
+}
+
+// .offers-bg {
+//   @include offers-grid();
+//   mix-blend-mode: soft-light;
+// 
+//   > .offer-bg {
+//     background: white;
+//   }
+// }
+// .offers-bg-1 {
+//   @extend .offers-bg;
+//   @include offers-bg(-3, 1.2);
+//   opacity: 0.4;
+// }
+// .offers-bg-2 {
+//   @extend .offers-bg;
+//   @include offers-bg(1, 1.1);
+//   opacity: 0.6;
+// }
+// .offers-bg-3 {
+//   @extend .offers-bg;
+//   @include offers-bg(2, 1);
+//   opacity: 0.9;
+//   // mix-blend-mode: multiply;
+//   // vs:
+//   mix-blend-mode: overlay;
+// }
+
+.offers {
+  @include offers-grid();
+
+  .offer {
+    display: flex;
+
+    box-shadow: 0 -20px 0 -18px transparent;
+    @media screen and (min-width: 900px) {
+      box-shadow: 0 -20px 0 -18px black;
+    }
+
+    position: relative;
+    transition: box-shadow .1s ease-in-out, opacity .1s ease-in-out;
+
+    > .box {
+      flex: 1;
+      text-decoration: none;
+
+      display: flex;
+      flex-flow: column nowrap;
+
+      padding: .75em;
+      margin: .5em;
+
+      color: black;
+      text-shadow:
+        1px 1px 2px rgba(white, 0.2),
+        -1px 1px 2px rgba(white, 0.2),
+        1px -1px 2px rgba(white, 0.4),
+        -1px -1px 2px rgba(white, 0.4);
+
+      z-index: 1;
+
+      > * {
+        white-space: nowrap;
+        display: block;
+        padding-left: .25em;
+        padding-right: .25em;
+      }
+      :not(.title) {
+        line-height: 1.4em;
+      }
+    }
+
+    .title {
+      padding-bottom: 1em;
+      margin-bottom: .5em;
+
+      @media screen and (min-width: 900px) {
+        border-bottom: 1px solid black;
+        margin-bottom: 1.5em;
+      }
+
+      .keyword {
+        margin-left: -.25em;
+        font-size: 24px;
+        font-weight: normal;
+        display: block;
+        color: darken($color, 32%);
+      }
+    }
+
+    .features {
+      margin-top: 1em;
+      white-space: unset;
+      font-size: 80%;
+      flex: 1;
+      li {
+        list-style: unset;
+        margin-left: 1.25em;
+      }
+    }
+
+    .talk {
+      margin-top: 2em;
+      cursor: pointer;
+      padding: .5em;
+      border: 0;
+      font-size: inherit;
+      color: white;
+      background: linear-gradient(165deg, rgba(darken($color, 35%), 0.55) 0%, rgba(darken($color, 35%), 0.8) 100%);
+      box-shadow: 0 2px 4px -2px rgba(black, 0.4);
+    }
+    > .box > form {
+      margin: 0;
+      padding: 0;
+
+      margin-top: 1em;
+      @media screen and (min-width: 900px) {
+        margin-top: 2em;
+      }
+
+      textarea {
+        display: block;
+        width: 87%;
+        margin: 0;
+        cursor: pointer;
+        padding: .5em .5em .5em 0;
+        border: 0;
+        font-size: inherit;
+        font-family: inherit;
+        color: black;
+        border: 0;
+        border-bottom: 1px solid black;
+        transition: margin .1s ease-in-out, padding .1s ease-in-out;
+        background: transparent;
+      }
+      .talk {
+        display: none;
+      }
+    }
+
+    &.sre .keyword {
+      margin-left: -.34em;
+    }
+    &.weekly .keyword {
+      margin-left: -.31em;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &.answering-mode {
+    > .offer {
+      opacity: 0.7;
+      .title {
+        transition: margin .1s ease-in-out, padding .1s ease-in-out;
+      }
+
+      &.active {
+        opacity: 1;
+        background: white;
+        box-shadow: 0 -2px 0 0 black, 0 -4px 13px -4px rgba(black, 0.4);
+
+        > .box form textarea {
+          margin-left: -1.25em;
+          padding-left: 1.25em;
+        }
+        > .box form .talk {
+          display: block;
+          position: absolute;
+          bottom: -1.25em;
+          transition: opacity .1s ease-in-out;
+          opacity: 1;
+
+          &[disabled] {
+            opacity: 0;
+          }
+        }
+        .title {
+          margin-left: -1.25em;
+          padding-left: 1.5em;
+          margin-right: -1.25em;
+        }
+      }
+    }
+  }
+}
+
+
+.offer-info {
+  border: 1px solid black;
+  padding: 1em;
+  position: relative;
+  top: -1px;
+  margin: 0 .5em 0 .5em;
+}
+@media screen and (min-width: 900px) {
+  html {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+  }
+  body {
+    position: relative;
+    overflow-y: scroll;
+  }
+  body > main {
+    width: 80vw;
+  }
+
+  body > header > h1 {
+    z-index: -1;
+    position: absolute;
+    width: 70vw;
+    line-height: .5;
+    bottom: -2em;
+    font-variant-numeric: proportional-nums;
+    letter-spacing: -.035em;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  body > main {
+    width: 70vw;
+  }
+}

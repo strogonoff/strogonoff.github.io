@@ -1,59 +1,104 @@
-<!doctype html>
+---
+layout: default
+---
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<header>
+  <h1><span class="name">Anton</span>.<span class="surname">Strogonoff</span>.name</h1>
+</header>
 
-        <meta property="og:url" content="http://anton.strogonoff.name/">
-        <meta property="og:site_name" content="Anton Strogonoff’s site">
+<main>
+  <div class="offers-container">
+    <div class="offers-bg-1">
+      <div class="offer-bg"></div>
+      <div class="offer-bg"></div>
+      <div class="offer-bg"></div>
+    </div>
+    <div class="offers-bg-2">
+      <div class="offer-bg"></div>
+      <div class="offer-bg"></div>
+      <div class="offer-bg"></div>
+    </div>
+    <div class="offers-bg-3">
+      <div class="offer-bg"></div>
+      <div class="offer-bg"></div>
+      <div class="offer-bg"></div>
+    </div>
 
-        <meta name="google-site-verification" content="EuT8J1SwiGCtx00tH9KWRiYjSe9fylXbeJ22dW9Atj0" />
+    <ul class="offers" role="nav">
+      <li class="offer mvp">
+        <div class="box" href="#mvp">
+          <span class="title"><span class="keyword">MVP</span> execution</span>
+          <span class="price">
+            <span class="total"><span class="from">from </span>US$2000.00</span>
+          </span>
+          <span class="duration">2–3 weeks long</span>
 
-        <style>
-            html {
-                min-height: 100%;
-                display: flex;
-            }
-            body {
-                flex: 1;
-                flex-flow: column nowrap;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin: 0 12vw 0 12vw;
-            }
-            h1 {
-                font-size: 300%;
-                font-family: sans-serif;
-            }
-        </style>
-        <title>Anton Strogonoff</title>
-    </head>
+          <ul class="features">
+            <li>Test out ideas
+            <li>Seize market opportunity
+          </ul>
 
-    <script type="application/ld+json">
-        {
-            "@context": "http://schema.org",
-            "@type": "Person",
-            "email": "mailto:anton@strogonoff.name",
-            "name": "Anton Strogonoff",
-            "url": "http://anton.strogonoff.name",
-            "contactPoint": []
-        }
-    </script>
+          <form>
+            <textarea placeholder="What is your vision?" rows=1></textarea>
+            <a class="talk">Let’s talk</a>
+          </form>
+        </div>
 
-    <body>
-        <h2 title="Hi!">Anton Strogonoff</h2>
-        <p>Reach&nbsp;me by&nbsp;email (address: replace the&nbsp;first&nbsp;dot in&nbsp;anton.strogonoff.name with&nbsp;an&nbsp;@)</p>
+      <li class="offer sre">
+        <div class="box" href="#sre">
+          <span class="title">Retained <span class="keyword">SRE team</span></span>
+          <span class="price">
+            <span class="total"><span class="from">from </span>US$24000.00</span>
+          </span>
+          <span class="duration">6–9 months long</span>
 
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+          <ul class="features">
+            <li>Audit your architecture
+            <li>Improve reliability
+            <li>Reduce TTM
+          </ul>
 
-            ga('create', 'UA-24538431-1', 'auto');
-            ga('require', 'displayfeatures');
-            ga('send', 'pageview');
-        </script>
+          <!--
+          <p>We</p>
+          <ul class="features">
+            <li>Audit your existing architecture, if any
+            <li>Work with you and your team to update the infrastructure
+              and development processes
+          </ul>
+          -->
+
+
+          <form>
+            <textarea placeholder="What is your uptime?" rows=1></textarea>
+            <a class="talk">Let’s talk</a>
+          </form>
+          <!--
+          Do you have CI or CD?
+          What’s your time-to-release?
+          -->
+        </div>
+
+      <li class="offer weekly">
+        <div class="box" href="#weekly">
+          <span class="title"><span class="keyword">Consulting</span> and training</span>
+          <span class="price">
+            <span class="per-unit">US$2000.00<span class="time-unit">/wk</span></span>
+          </span>
+          <span class="duration depends">Duration depends</span>
+
+          <ul class="features">
+            <li>Resolve issues
+            <li>Review development processes
+            <li>Adopt industry best practices
+          </ul>
+
+          <form>
+            <textarea placeholder="What’s your challenge?" rows=1></textarea>
+            <a class="talk">Let’s talk</a>
+          </form>
+        </div>
+    </ul>
+  </div>
+</main>
+
+<script type="module" src="{{ "assets/index.js" | relative_url }}"></script>
