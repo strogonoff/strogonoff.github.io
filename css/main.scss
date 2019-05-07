@@ -220,6 +220,7 @@ ul {
         transition: margin .1s ease-in-out, padding .1s ease-in-out;
         background: transparent;
         resize: vertical;
+        min-height: 1.4em;
 
         &::placeholder {
           font-size: 90%;
